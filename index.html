@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The Handy Nevadan provides dependable handyman, repair, installation, mounting, maintenance, cleaning, and home improvement help in Reno, Nevada." />
+  <title>The Handy Nevadan | Handyman & Home Services in Reno, NV</title>
+
+  <style>
+    :root{
+      --blue:#0b4ea2;
+      --blue-dark:#07356d;
+      --blue-soft:#eaf3ff;
+      --ink:#132238;
+      --muted:#5f6f82;
+      --line:#dbe5ef;
+      --white:#ffffff;
+      --off:#f7f9fc;
+      --accent:#f59e0b;
+      --success:#0f766e;
+      --shadow:0 18px 45px rgba(10,38,75,.12);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.6;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .container{width:min(var(--max), calc(100% - 36px));margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 11px;border-radius:999px;
+      background:var(--blue-soft);color:var(--blue-dark);
+      font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase
+    }
+
+    .topbar{
+      background:var(--blue-dark);color:#fff;font-size:.92rem
+    }
+    .topbar .container{
+      display:flex;justify-content:space-between;gap:18px;align-items:center;padding:9px 0
+    }
+    .topbar a{color:#fff;text-decoration:none}
+    .topbar-links{display:flex;gap:18px;flex-wrap:wrap}
+
+    header{
+      position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
+      backdrop-filter:blur(14px);border-bottom:1px solid rgba(219,229,239,.8)
+    }
+    .nav{
+      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{width:78px;height:78px;object-fit:contain}
+    .brand-copy strong{display:block;font-size:1.02rem;color:var(--blue-dark)}
+    .brand-copy span{font-size:.78rem;color:var(--muted);display:block}
+    nav{display:flex;align-items:center;gap:23px}
+    nav a{text-decoration:none;font-weight:700;font-size:.94rem}
+    nav a:hover{color:var(--blue)}
+    .btn{
+      display:inline-flex;justify-content:center;align-items:center;gap:8px;
+      border-radius:12px;padding:13px 18px;font-weight:800;text-decoration:none;border:1px solid transparent;
+      transition:.2s ease;cursor:pointer;font:inherit
+    }
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(11,78,162,.20)}
+    .btn-primary:hover{background:var(--blue-dark);transform:translateY(-1px)}
+    .btn-light{background:#fff;color:var(--blue-dark);border-color:var(--line)}
+    .btn-light:hover{border-color:#aabed6;transform:translateY(-1px)}
+    .menu-btn{display:none;background:none;border:0;font-size:1.6rem}
+
+    .hero{
+      background:
+        radial-gradient(circle at 90% 5%, rgba(11,78,162,.16), transparent 34%),
+        linear-gradient(180deg,#f8fbff 0%,#fff 100%);
+      padding:74px 0 66px;overflow:hidden
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}
+    h1{
+      margin:18px 0 18px;font-size:clamp(2.55rem,5vw,5rem);
+      line-height:.98;letter-spacing:-.055em;color:#0b1b32
+    }
+    .hero p{font-size:1.12rem;color:var(--muted);max-width:680px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .trust-row{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:26px;color:#334a66;font-weight:700;font-size:.92rem}
+    .trust-row span::before{content:"✓";color:var(--success);font-weight:900;margin-right:7px}
+
+    .hero-card{
+      position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;
+      box-shadow:var(--shadow);padding:16px;transform:rotate(1deg)
+    }
+    .hero-card img{border-radius:18px;width:100%;object-fit:cover}
+    .quick-card{
+      position:absolute;left:-28px;bottom:-28px;background:var(--blue-dark);color:#fff;
+      width:min(300px,75%);padding:20px;border-radius:18px;box-shadow:var(--shadow)
+    }
+    .quick-card strong{font-size:1.2rem;display:block}
+    .quick-card a{color:#fff;font-weight:800;text-decoration:none}
+
+    section{padding:84px 0}
+    .section-head{max-width:760px;margin-bottom:36px}
+    .section-head h2{
+      font-size:clamp(2rem,4vw,3.35rem);line-height:1.05;letter-spacing:-.035em;
+      margin:12px 0 14px
+    }
+    .section-head p{color:var(--muted);font-size:1.05rem;margin:0}
+
+    .services{background:var(--off)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+      box-shadow:0 8px 28px rgba(15,34,60,.05)
+    }
+    .service-icon{
+      width:48px;height:48px;border-radius:14px;background:var(--blue-soft);color:var(--blue);
+      display:grid;place-items:center;font-size:1.35rem;margin-bottom:18px
+    }
+    .card h3{margin:0 0 8px;font-size:1.15rem}
+    .card p{margin:0;color:var(--muted)}
+    .card .small-link{display:inline-block;margin-top:16px;color:var(--blue);font-weight:800;text-decoration:none}
+
+    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center}
+    .about-visual{
+      min-height:430px;border-radius:28px;background:
+        linear-gradient(135deg,rgba(7,53,109,.92),rgba(11,78,162,.80)),
+        url("assets/handy-nevadan-call-now-banner.png") center/cover;
+      padding:36px;color:#fff;display:flex;align-items:flex-end
+    }
+    .about-visual h3{font-size:2rem;line-height:1.05;margin:0 0 10px}
+    .about-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+    .point{padding:16px;border-radius:15px;background:var(--off);border:1px solid var(--line)}
+    .point strong{display:block;margin-bottom:4px}
+    .point span{font-size:.92rem;color:var(--muted)}
+
+    .process{background:var(--blue-dark);color:#fff}
+    .process .section-head p{color:#d6e4f5}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{border:1px solid rgba(255,255,255,.18);padding:24px;border-radius:18px;background:rgba(255,255,255,.05)}
+    .step-num{
+      width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--blue-dark);
+      font-weight:900;margin-bottom:16px
+    }
+    .step p{color:#d6e4f5;margin:8px 0 0}
+
+    .price-note{
+      display:flex;justify-content:space-between;gap:24px;align-items:center;
+      padding:28px;background:#fff;border:1px dashed #a9bfd7;border-radius:20px
+    }
+    .price-note p{margin:4px 0 0;color:var(--muted)}
+    .tag{font-weight:900;color:var(--blue);background:var(--blue-soft);padding:8px 11px;border-radius:10px}
+
+    .testimonials{background:var(--off)}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{font-size:1.02rem;margin-bottom:20px}
+    .stars{color:#b36b00;letter-spacing:2px;font-size:1.05rem;margin-bottom:12px}
+    .customer{font-weight:900}
+    .customer span{display:block;color:var(--muted);font-weight:500;font-size:.88rem}
+    .edit-note{font-size:.78rem;color:#7b8796;margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+
+    .contact{background:linear-gradient(180deg,#fff,#f6faff)}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}
+    .contact-list{display:grid;gap:14px;margin:26px 0}
+    .contact-item{
+      background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;
+      display:flex;gap:13px;align-items:flex-start
+    }
+    .contact-item strong{display:block}
+    .contact-item a{color:var(--blue);font-weight:700}
+    form{
+      background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)
+    }
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-weight:800;font-size:.91rem}
+    input,select,textarea{
+      width:100%;border:1px solid #cbd8e6;border-radius:11px;padding:12px 13px;
+      font:inherit;color:var(--ink);background:#fff
+    }
+    textarea{min-height:135px;resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:3px solid rgba(11,78,162,.12);border-color:var(--blue)}
+    .form-help{font-size:.8rem;color:var(--muted);margin-top:12px}
+
+    .cta{
+      padding:36px 0;background:var(--blue);color:#fff
+    }
+    .cta .container{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .cta h2{margin:0 0 6px;font-size:2rem}
+    .cta p{margin:0;color:#dceaff}
+    .cta .btn{background:#fff;color:var(--blue-dark)}
+
+    footer{background:#07192e;color:#dbe8f6;padding:48px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
+    .footer-logo{display:flex;gap:12px;align-items:center}
+    .footer-logo img{width:78px;background:#fff;border-radius:12px;padding:5px}
+    footer h4{color:#fff;margin:0 0 12px}
+    footer a{color:#dbe8f6;text-decoration:none}
+    footer a:hover{color:#fff;text-decoration:underline}
+    .footer-links{display:grid;gap:8px}
+    .copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;color:#9fb3c8;font-size:.88rem}
+
+    @media (max-width: 900px){
+      .topbar .container{align-items:flex-start;flex-direction:column;gap:4px}
+      .menu-btn{display:block}
+      nav{
+        display:none;position:absolute;left:18px;right:18px;top:84px;background:#fff;border:1px solid var(--line);
+        border-radius:16px;padding:16px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch
+      }
+      nav.open{display:flex}
+      .nav .desktop-cta{display:none}
+      .hero{padding-top:48px}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-card{margin-top:16px;transform:none}
+      .quick-card{position:static;width:100%;margin-top:12px}
+      .service-grid,.testimonial-grid{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 620px){
+      .container{width:min(100% - 24px,var(--max))}
+      section{padding:62px 0}
+      .brand-copy{display:none}
+      .service-grid,.testimonial-grid,.process-grid,.about-points,.form-grid,.footer-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .price-note,.cta .container{align-items:flex-start;flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .topbar-links{gap:8px 14px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div>Local handyman & home service support in Reno, Nevada</div>
+      <div class="topbar-links">
+        <a href="tel:+17755285262">Call: 775-528-5262</a>
+        <a href="mailto:inquiries@thehandynevadan.com">inquiries@thehandynevadan.com</a>
+        <a href="https://www.instagram.com/thehandynevadan/" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="The Handy Nevadan home">
+        <img src="assets/handy-nevadan-logo.png" alt="The Handy Nevadan logo" />
+        <span class="brand-copy">
+          <strong>The Handy Nevadan</strong>
+          <span>Repair • Installation • Maintenance</span>
+        </span>
+      </a>
+
+      <button class="menu-btn" aria-label="Open navigation" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">How It Works</a>
+        <a href="#reviews">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-primary desktop-cta" href="#contact">Request an Estimate</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Handyman help without the hassle</span>
+          <h1>Reliable help for the jobs around your home.</h1>
+          <p>
+            From TV mounting and shade installation to repairs, cleaning, assembly, touch-ups and routine maintenance,
+            The Handy Nevadan helps Reno homeowners get projects finished with clear communication and dependable service.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get a Free Estimate</a>
+            <a class="btn btn-light" href="tel:+17755285262">Call 775-528-5262</a>
+          </div>
+          <div class="trust-row">
+            <span>Local Reno service</span>
+            <span>Clear project communication</span>
+            <span>Residential handyman support</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/handy-nevadan-call-now-banner.png" alt="The Handy Nevadan services and contact banner" />
+          <div class="quick-card">
+            <small>Have a project in mind?</small>
+            <strong>Send photos + details for a faster estimate.</strong>
+            <a href="#contact">Start your request →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Services</span>
+          <h2>One dependable contact for everyday home projects.</h2>
+          <p>
+            The service list below is intentionally easy to edit. You can add prices, minimum service charges,
+            package rates or new services later without redesigning the site.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="card">
+            <div class="service-icon">📺</div>
+            <h3>TV Mounting</h3>
+            <p>Wall mounting, positioning, basic cable organization and setup support for TVs and displays.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🪟</div>
+            <h3>Blinds, Shades & Curtain Hardware</h3>
+            <p>Installation and replacement of blinds, shades, curtain rods and common window-treatment hardware.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🛠️</div>
+            <h3>General Repairs</h3>
+            <p>Help with small household repairs, loose hardware, damaged trim, doors, shelving and other everyday fixes.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🧰</div>
+            <h3>Furniture Assembly</h3>
+            <p>Assembly of desks, bed frames, shelves, cabinets, patio furniture and other ready-to-assemble products.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🧱</div>
+            <h3>Wall Patching & Touch-Ups</h3>
+            <p>Minor drywall patching, nail-hole repair, surface touch-ups and preparation for a cleaner finished look.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🖼️</div>
+            <h3>Shelves, Mirrors & Décor</h3>
+            <p>Installation and hanging for shelving, mirrors, artwork, hooks and common household wall-mounted items.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🧹</div>
+            <h3>Cleaning & Property Reset</h3>
+            <p>Light cleaning and project clean-up support to help get rooms, rental units or completed work areas back in order.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🎨</div>
+            <h3>Painting & Touch-Up Projects</h3>
+            <p>Small painting projects, touch-ups, trim refreshes and preparation work for selected residential areas.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">🏠</div>
+            <h3>Home Maintenance</h3>
+            <p>Routine household maintenance, punch-list items and seasonal tasks that help keep your home in good shape.</p>
+            <a class="small-link" href="#contact">Request a quote →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div>
+            <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">About The Handy Nevadan</span>
+            <h3>Local service focused on getting the details right.</h3>
+            <p style="margin:0;color:#dbe8f6">
+              A straightforward option for homeowners who want help completing repairs, installations and improvement projects.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-head" style="margin-bottom:0">
+            <span class="eyebrow">Why choose us</span>
+            <h2>Professional service that feels personal.</h2>
+            <p>
+              The Handy Nevadan is a Reno-based handyman service built around responsiveness, practical solutions and quality work.
+              Whether you have one small project or a list of items to finish, the goal is to make the process simple from first contact through completion.
+            </p>
+          </div>
+
+          <div class="about-points">
+            <div class="point"><strong>Clear communication</strong><span>Share the project, photos and timing so expectations are clear up front.</span></div>
+            <div class="point"><strong>Flexible project support</strong><span>Useful for repairs, installations, punch lists and recurring maintenance needs.</span></div>
+            <div class="point"><strong>Respect for your home</strong><span>Work areas are approached carefully and cleaned up when the job is finished.</span></div>
+            <div class="point"><strong>Easy estimate requests</strong><span>Customers can call, email, Instagram-message or use the website form below.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#fff">Simple process</span>
+          <h2>From “I need this fixed” to “job complete.”</h2>
+          <p>Keep the customer experience clear, fast and easy to understand.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step"><div class="step-num">1</div><strong>Send the request</strong><p>Tell us what you need and include photos when possible.</p></div>
+          <div class="step"><div class="step-num">2</div><strong>Confirm the scope</strong><p>We review the project details and ask any necessary questions.</p></div>
+          <div class="step"><div class="step-num">3</div><strong>Get an estimate</strong><p>Receive pricing or a project estimate before scheduling the work.</p></div>
+          <div class="step"><div class="step-num">4</div><strong>Schedule service</strong><p>Choose a workable time and get the project handled.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>Built so you can add pricing later.</h2>
+          <p>
+            Many handyman projects vary by size, materials and site conditions. This area is ready for you to add service minimums,
+            hourly rates, flat-rate packages or “starting at” prices whenever you are ready.
+          </p>
+        </div>
+        <div class="price-note">
+          <div>
+            <strong style="font-size:1.18rem">Editable pricing placeholder</strong>
+            <p>Example: “TV mounting starting at $___” or “2-hour handyman visit: $___”.</p>
+          </div>
+          <span class="tag">Add prices here later</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Client testimonials</span>
+          <h2>Build trust with feedback from real customers.</h2>
+          <p>
+            The cards below are editable placeholders. Replace them with verified customer reviews before publishing them as testimonials.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“Great communication, showed up prepared, and made the entire project easy from start to finish.”</div>
+            <div class="customer">Customer Name<span>TV mounting / Reno, NV</span></div>
+            <div class="edit-note">EDIT BEFORE PUBLISHING: Replace with a verified customer testimonial.</div>
+          </article>
+
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“Professional, efficient and respectful of the space. I would definitely call again for future projects.”</div>
+            <div class="customer">Customer Name<span>Home repair / Reno, NV</span></div>
+            <div class="edit-note">EDIT BEFORE PUBLISHING: Replace with a verified customer testimonial.</div>
+          </article>
+
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <div class="quote">“I had several small jobs on my list and it was a relief to get them all taken care of in one visit.”</div>
+            <div class="customer">Customer Name<span>Handyman punch list / Reno, NV</span></div>
+            <div class="edit-note">EDIT BEFORE PUBLISHING: Replace with a verified customer testimonial.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Contact</span>
+            <h2>Tell us what you need help with.</h2>
+            <p>
+              For the fastest estimate, include the type of project, your preferred timing and any measurements or photos you already have.
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>📞</div><div><strong>Phone</strong><a href="tel:+17755285262">775-528-5262</a></div>
+            </div>
+            <div class="contact-item">
+              <div>✉️</div><div><strong>Email</strong><a href="mailto:inquiries@thehandynevadan.com">inquiries@thehandynevadan.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div>📷</div><div><strong>Instagram</strong><a href="https://www.instagram.com/thehandynevadan/" target="_blank" rel="noopener">@thehandynevadan</a></div>
+            </div>
+            <div class="contact-item">
+              <div>📍</div><div><strong>Service location</strong><span>Reno, Nevada</span></div>
+            </div>
+          </div>
+        </div>
+
+        <form id="estimateForm">
+          <h3 style="font-size:1.45rem;margin-top:0">Request an Estimate</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full name *</label>
+              <input id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone *</label>
+              <input id="phone" name="phone" required placeholder="775-555-1234" />
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" type="email" name="email" required placeholder="you@example.com" />
+            </div>
+            <div class="field">
+              <label for="service">Service needed *</label>
+              <select id="service" name="service" required>
+                <option value="">Choose a service</option>
+                <option>TV Mounting</option>
+                <option>Blinds / Shades / Curtain Hardware</option>
+                <option>General Repairs</option>
+                <option>Furniture Assembly</option>
+                <option>Wall Patching / Touch-Ups</option>
+                <option>Shelves / Mirrors / Décor</option>
+                <option>Cleaning / Property Reset</option>
+                <option>Painting / Touch-Ups</option>
+                <option>Home Maintenance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="location">Project area / neighborhood</label>
+              <input id="location" name="location" placeholder="Example: South Reno" />
+            </div>
+            <div class="field full">
+              <label for="message">Project details *</label>
+              <textarea id="message" name="message" required placeholder="Describe the project, quantity of items, approximate measurements, timing, and anything else that would help with an estimate."></textarea>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary" type="submit">Create Email Request</button>
+            </div>
+          </div>
+          <div class="form-help">
+            This static demo does not store customer data. Clicking the button opens the visitor's email app with the form details addressed to inquiries@thehandynevadan.com.
+            For production, you can connect this form to Formspree, Web3Forms, a CRM, or your own backend.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div>
+          <h2>Ready to knock a project off your list?</h2>
+          <p>Call, email or send a quick request through the form.</p>
+        </div>
+        <a class="btn" href="tel:+17755285262">Call 775-528-5262</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/handy-nevadan-logo.png" alt="The Handy Nevadan logo" />
+            <div><strong style="color:#fff;font-size:1.1rem">The Handy Nevadan</strong><br><span>Repair • Installation • Maintenance</span></div>
+          </div>
+          <p style="max-width:460px;color:#9fb3c8">
+            Handyman and home-service support for repairs, installation, mounting, maintenance, assembly, cleaning and improvement projects in Reno, Nevada.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#reviews">Testimonials</a>
+            <a href="#contact">Request an Estimate</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="tel:+17755285262">775-528-5262</a>
+            <a href="mailto:inquiries@thehandynevadan.com">inquiries@thehandynevadan.com</a>
+            <a href="https://www.instagram.com/thehandynevadan/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        © <span id="year"></span> The Handy Nevadan. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => document.querySelector("nav").classList.remove("open"));
+    });
+
+    document.getElementById("estimateForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const data = new FormData(this);
+      const subject = encodeURIComponent("Website Estimate Request - " + (data.get("service") || "Handyman Service"));
+      const body = encodeURIComponent(
+`Hello The Handy Nevadan,
+
+I would like to request an estimate.
+
+Name: ${data.get("name")}
+Phone: ${data.get("phone")}
+Email: ${data.get("email")}
+Service: ${data.get("service")}
+Project area: ${data.get("location")}
+
+Project details:
+${data.get("message")}
+
+Thank you.`
+      );
+
+      window.location.href = `mailto:inquiries@thehandynevadan.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+
+</body>
+</html>
